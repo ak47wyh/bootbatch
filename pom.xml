@@ -38,7 +38,7 @@
 			<artifactId>spring-boot-starter-batch</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>repository.org.hibernate</groupId>
+			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 		</dependency>
 		<dependency>

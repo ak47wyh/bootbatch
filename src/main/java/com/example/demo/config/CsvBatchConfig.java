@@ -1,8 +1,8 @@
 package com.example.demo.config;
 
 import com.example.demo.batch.CsvJobListener;
+import com.example.demo.batch.CvsItemProcessor;
 import com.example.demo.utils.CsvBeanValidator;
-import com.example.demo.utils.CvsItemProcessor;
 import com.example.demo.vo.Person;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -64,7 +64,7 @@ public class CsvBatchConfig {
     public ItemWriter<Person> writer(@Qualifier("dataSource") DataSource dataSource) {
         JdbcBatchItemWriter<Person> writer = new JdbcBatchItemWriter<Person>();
         writer.setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<Person>());
-        String sql = "insert into person "+"(id,name,age,nation,address) values(hibernate_sequence.nextval,:name,:age,:nation,:address)";
+        String sql = "insert into batch_person "+"(name,age,nation,address) values(:name,:age,:nation,:address)";
         writer.setSql(sql);
         writer.setDataSource(dataSource);
         return writer;
