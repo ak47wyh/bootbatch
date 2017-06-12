@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by wyh on 2017/6/10.
  */
 @RestController
-public class Person {
+public class PersonControll {
 
     @Autowired
     JobLauncher jobLauncher;
